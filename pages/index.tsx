@@ -420,9 +420,9 @@ export default function HomePage() {
                   {ind.description}
                 </p>
                 <div className="flex flex-wrap gap-1">
-                  {ind.equipment.slice(0, 3).map((eq) => (
-                    <span key={eq} className="font-mono text-[10px] text-industrial-green border border-industrial-green/30 px-2 py-0.5">
-                      {eq}
+                  {ind.equipment.slice(0, 3).map((eq, i) => (
+                    <span key={i} className="font-mono text-[10px] text-industrial-green border border-industrial-green/30 px-2 py-0.5">
+                      {eq.name}
                     </span>
                   ))}
                 </div>

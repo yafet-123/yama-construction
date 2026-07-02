@@ -11,7 +11,7 @@ export default function IndustryPage() {
     return <div>Industry not found</div>;
   }
 
-  const relatedProjects = projects.filter((p) => p.industry.toLowerCase() === ind.name.toLowerCase());
+  const relatedProjects = projects.filter((p) => p.industrySlug === ind.slug);
 
   return (
     <>
@@ -27,8 +27,11 @@ export default function IndustryPage() {
         <div className="container-site">
           <h2 className="section-title mb-8">Recommended Equipment</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-            {ind.equipment.map((eq) => (
-              <div key={eq} className="border border-concrete-secondary p-6 text-center bg-concrete"><span className="font-mono text-sm text-charcoal font-semibold">{eq}</span></div>
+            {ind.equipment.map((eq, i) => (
+              <div key={i} className="border border-concrete-secondary p-4 bg-concrete text-center">
+                <span className="font-mono text-lg text-charcoal font-semibold block mb-1">{eq.name}</span>
+                <p className="font-body text-md text-black leading-relaxed">{eq.description}</p>
+              </div>
             ))}
           </div>
           <Link href="/contact" className="btn-primary text-sm">Discuss Your {ind.name} Needs</Link>

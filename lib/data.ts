@@ -39,7 +39,12 @@ export interface Industry {
   slug: string;
   description: string;
   image: string;
-  equipment: string[];
+  equipment: EquipmentItem[];
+}
+
+export interface EquipmentItem {
+  name: string;
+  description: string;
 }
 
 export interface Project {
@@ -48,7 +53,8 @@ export interface Project {
   client: string;
   location: string;
   industry: string;
-  equipment: string[];
+  industrySlug: string;
+  equipment: EquipmentItem[];
   year: string;
   image: string;
   description: string;
@@ -194,14 +200,54 @@ export const brands: Brand[] = [
 ];
 
 export const industries: Industry[] = [
-  { name: 'Construction', slug: 'construction', description: 'Full range of heavy equipment for building, road construction, and infrastructure development projects across Ethiopia.', image: '/images/industries/construction.jpg', equipment: ['Excavators', 'Bulldozers', 'Wheel Loaders', 'Cranes', 'Concrete Equipment'] },
-  { name: 'Mining', slug: 'mining', description: 'Heavy-duty mining equipment for surface and underground operations, including haul trucks, drills, and loaders.', image: '/images/industries/mining.jpg', equipment: ['Mining Excavators', 'Haul Trucks', 'Drill Rigs', 'Underground Loaders'] },
-  { name: 'Agriculture', slug: 'agriculture', description: 'Tractors, harvesters, and implements for large-scale commercial farming and agribusiness operations.', image: '/images/industries/agriculture.jpg', equipment: ['Tractors', 'Harvesters', 'Ploughs', 'Irrigation Systems'] },
-  { name: 'Government & Public Works', slug: 'government', description: 'Equipment procurement solutions for federal and regional government infrastructure projects and public works.', image: '/images/industries/government.jpg', equipment: ['Road Construction', 'Utility Vehicles', 'Generators', 'Water Trucks'] },
-  { name: 'NGO & Development', slug: 'ngo', description: 'Reliable equipment for humanitarian, development, and infrastructure projects funded by international organizations.', image: '/images/industries/ngo.jpg', equipment: ['Generators', 'Water Pumps', 'Compact Loaders', 'Utility Vehicles'] },
-  { name: 'Manufacturing', slug: 'manufacturing', description: 'Industrial machinery and material handling equipment for factories, processing plants, and production facilities.', image: '/images/industries/manufacturing.jpg', equipment: ['Forklifts', 'Conveyors', 'Compressors', 'Generators'] },
-  { name: 'Logistics & Transport', slug: 'logistics', description: 'Commercial vehicles, fleet solutions, and material handling equipment for logistics companies and transport operators.', image: '/images/industries/logistics.jpg', equipment: ['Trucks', 'Forklifts', 'Telehandlers', 'Fleet Vehicles'] },
-  { name: 'Banking & Finance', slug: 'banking', description: 'Asset financing, leasing, and procurement support for banks and financial institutions acquiring equipment fleets.', image: '/images/industries/banking.jpg', equipment: ['Fleet Vehicles', 'Generators', 'Security Equipment'] },
+  { name: 'Construction', slug: 'construction', description: 'Full range of heavy equipment for building, road construction, and infrastructure development projects across Ethiopia.', image: '/images/industries/construction.jpg', equipment: [
+    { name: 'Excavators', description: 'Hydraulic excavators from 1-ton mini to 50-ton heavy class for digging, trenching, and material handling on construction sites of all sizes.' },
+    { name: 'Bulldozers', description: 'Track-type tractors with powerful blades for land clearing, grading, and pushing heavy materials across rough terrain.' },
+    { name: 'Wheel Loaders', description: 'Versatile front-end loaders for loading, carrying, and stockpiling materials with quick cycle times and excellent fuel efficiency.' },
+    { name: 'Cranes', description: 'Mobile and tower cranes for lifting and placing heavy materials, structural components, and equipment at height.' },
+    { name: 'Concrete Equipment', description: 'Concrete mixers, batch plants, and pumps for producing and placing high-quality concrete in construction projects.' },
+  ]},
+  { name: 'Mining', slug: 'mining', description: 'Heavy-duty mining equipment for surface and underground operations, including haul trucks, drills, and loaders.', image: '/images/industries/mining.jpg', equipment: [
+    { name: 'Mining Excavators', description: 'Large-scale hydraulic excavators designed for high-volume digging and loading in open-pit and underground mining operations.' },
+    { name: 'Haul Trucks', description: 'Heavy-duty off-highway dump trucks with high payload capacity for transporting mined materials over rough terrain.' },
+    { name: 'Drill Rigs', description: 'Rotary and percussion drilling equipment for exploration, blasthole drilling, and geotechnical investigation in mining sites.' },
+    { name: 'Underground Loaders', description: 'Compact, high-traction loaders designed specifically for underground mining tunnels and confined spaces.' },
+  ]},
+  { name: 'Agriculture', slug: 'agriculture', description: 'Tractors, harvesters, and implements for large-scale commercial farming and agribusiness operations.', image: '/images/industries/agriculture.jpg', equipment: [
+    { name: 'Tractors', description: 'High-horsepower agricultural tractors with PTO and three-point linkage for pulling ploughs, harrows, and tillage implements.' },
+    { name: 'Harvesters', description: 'Combine harvesters and specialized crop harvesting equipment for efficient grain and crop collection.' },
+    { name: 'Ploughs', description: 'Heavy-duty ploughs and tillage equipment for primary soil preparation and land cultivation.' },
+    { name: 'Irrigation Systems', description: 'Pumps, pipes, and sprinkler systems for efficient water distribution across agricultural land.' },
+  ]},
+  { name: 'Government & Public Works', slug: 'government', description: 'Equipment procurement solutions for federal and regional government infrastructure projects and public works.', image: '/images/industries/government.jpg', equipment: [
+    { name: 'Road Construction', description: 'Graders, compactors, asphalt pavers, and road rollers for building and maintaining road infrastructure.' },
+    { name: 'Utility Vehicles', description: 'Multi-purpose vehicles for public works, including water trucks, dump trucks, and service vehicles.' },
+    { name: 'Generators', description: 'Industrial diesel generators for powering government facilities, public buildings, and critical infrastructure.' },
+    { name: 'Water Trucks', description: 'Specialized tanker trucks for water distribution, dust suppression, and emergency water supply in public works.' },
+  ]},
+  { name: 'NGO & Development', slug: 'ngo', description: 'Reliable equipment for humanitarian, development, and infrastructure projects funded by international organizations.', image: '/images/industries/ngo.jpg', equipment: [
+    { name: 'Generators', description: 'Portable and stationary generators for powering field offices, clinics, and community facilities in remote areas.' },
+    { name: 'Water Pumps', description: 'Solar-powered and diesel water pumps for clean water access, irrigation, and sanitation projects.' },
+    { name: 'Compact Loaders', description: 'Small, versatile loaders for construction and material handling in confined spaces and community projects.' },
+    { name: 'Utility Vehicles', description: 'Durable 4x4 vehicles for transporting personnel, supplies, and equipment in challenging terrain.' },
+  ]},
+  { name: 'Manufacturing', slug: 'manufacturing', description: 'Industrial machinery and material handling equipment for factories, processing plants, and production facilities.', image: '/images/industries/manufacturing.jpg', equipment: [
+    { name: 'Forklifts', description: 'Electric and diesel forklifts for material handling, warehousing, and production line support in manufacturing facilities.' },
+    { name: 'Conveyors', description: 'Belt and roller conveyor systems for automated material transport and production line efficiency.' },
+    { name: 'Compressors', description: 'Industrial air compressors for powering pneumatic tools, machinery, and production equipment.' },
+    { name: 'Generators', description: 'Backup and prime power generators for uninterrupted manufacturing operations and production continuity.' },
+  ]},
+  { name: 'Logistics & Transport', slug: 'logistics', description: 'Commercial vehicles, fleet solutions, and material handling equipment for logistics companies and transport operators.', image: '/images/industries/logistics.jpg', equipment: [
+    { name: 'Trucks', description: 'Heavy-duty trucks and trailers for long-haul freight, container transport, and bulk material delivery.' },
+    { name: 'Forklifts', description: 'Warehouse forklifts and reach trucks for loading, unloading, and organizing goods in distribution centers.' },
+    { name: 'Telehandlers', description: 'Telescopic handlers for lifting and placing materials at height in warehouses and logistics yards.' },
+    { name: 'Fleet Vehicles', description: 'Light and medium commercial vehicles for last-mile delivery, service fleets, and logistics operations.' },
+  ]},
+  { name: 'Banking & Finance', slug: 'banking', description: 'Asset financing, leasing, and procurement support for banks and financial institutions acquiring equipment fleets.', image: '/images/industries/banking.jpg', equipment: [
+    { name: 'Fleet Vehicles', description: 'Armored and standard fleet vehicles for cash transport, branch operations, and mobile banking services.' },
+    { name: 'Generators', description: 'Reliable backup generators for maintaining banking operations, ATMs, and data centers during power outages.' },
+    { name: 'Security Equipment', description: 'Surveillance systems, access control, and security infrastructure for protecting banking facilities and assets.' },
+  ]},
 ];
 
 export const testimonials: Testimonial[] = [
@@ -212,10 +258,27 @@ export const testimonials: Testimonial[] = [
 ];
 
 export const projects: Project[] = [
-  { slug: 'gerd-auxiliary-equipment', title: 'Equipment Supply for GERD Auxiliary Works', client: 'Ethiopian Electric Power (EEP)', location: 'Benishangul-Gumuz, Ethiopia', industry: 'Construction', equipment: ['CAT 336 Excavators', 'Komatsu WA500 Loaders', 'Volvo A40G Dump Trucks'], year: '2024', image: '/images/projects/project (1).jpg', description: 'Supplied 20 units of heavy earthmoving equipment for auxiliary construction works at the Grand Ethiopian Renaissance Dam, including excavation, material handling, and site preparation.', result: 'All equipment delivered on schedule. 98% uptime maintained over 18 months of continuous operation.', featured: true },
-  { slug: 'cbe-fleet-expansion', title: 'Nationwide Fleet & Power Expansion', client: 'Commercial Bank of Ethiopia', location: 'Addis Ababa & 120 Branches Nationwide', industry: 'Banking', equipment: ['Toyota Hilux Fleet', 'Perkins Generators', 'Mitsubishi Forklifts'], year: '2023-2024', image: '/images/projects/project (2).jpg', description: 'Comprehensive fleet and power solution for Ethiopia\'s largest bank, including 120 branch generators, 45 fleet vehicles, and material handling equipment for the central vault and logistics hub.', result: '97.3% power uptime across all branches. Fleet operating costs reduced by 22% through standardized maintenance.', featured: true },
-  { slug: 'somali-highway', title: 'Somali Region Highway Development', client: 'Ethiopian Roads Authority', location: 'Jijiga to Degehabur, Somali Region', industry: 'Construction', equipment: ['Komatsu GD655 Graders', 'Volvo SD110 Compactors', 'CAT D6T Dozers'], year: '2023-2025', image: '/images/projects/project (3).jpg', description: 'Supplied road construction equipment for 340km of highway development in the Somali Region, including graders, compactors, dozers, and support vehicles.', result: 'Phase 1 completed 2 months ahead of schedule. Equipment performed reliably in extreme temperatures exceeding 45°C.', featured: true },
-  { slug: 'irrigation-development', title: 'Irrigation Development Program', client: 'Ministry of Water & Energy', location: 'Oromia & SNNPR Regions', industry: 'Government', equipment: ['Tractors', 'Water Pumps', 'Generator Sets', 'Pipe Layers'], year: '2024', image: '/images/projects/project (4).jpg', description: 'Provided agricultural and irrigation equipment for a large-scale irrigation development program covering 15,000 hectares across two regions.', result: 'Irrigation capacity increased by 40%. Over 5,000 farming families benefited from improved water access.', featured: false },
+  { slug: 'gerd-auxiliary-equipment', title: 'Equipment Supply for GERD Auxiliary Works', client: 'Ethiopian Electric Power (EEP)', location: 'Benishangul-Gumuz, Ethiopia', industry: 'Construction', industrySlug: 'construction', equipment: [
+    { name: 'CAT 336 Excavators', description: 'Heavy-duty 36-ton excavators with advanced hydraulic systems for deep excavation and material handling in challenging terrain, providing precise control and high productivity for dam construction.' },
+    { name: 'Komatsu WA500 Loaders', description: 'Large-capacity wheel loaders designed for high-volume material handling, featuring quick cycle times and excellent fuel efficiency for moving earth and aggregate on the construction site.' },
+    { name: 'Volvo A40G Dump Trucks', description: '40-ton articulated haulers engineered for rough terrain, with superior traction and load capacity for transporting excavated material across uneven construction surfaces.' },
+  ], year: '2024', image: '/images/projects/project (1).jpg', description: 'Supplied 20 units of heavy earthmoving equipment for auxiliary construction works at the Grand Ethiopian Renaissance Dam, including excavation, material handling, and site preparation.', result: 'All equipment delivered on schedule. 98% uptime maintained over 18 months of continuous operation.', featured: true },
+  { slug: 'cbe-fleet-expansion', title: 'Nationwide Fleet & Power Expansion', client: 'Commercial Bank of Ethiopia', location: 'Addis Ababa & 120 Branches Nationwide', industry: 'Banking', industrySlug: 'banking', equipment: [
+    { name: 'Toyota Hilux Fleet', description: 'Reliable double-cab pickup trucks equipped for multi-terrain operations, serving as mobile banking units and service vehicles for branch operations across Ethiopia\'s diverse geography.' },
+    { name: 'Perkins Generators', description: 'Industrial-grade diesel generators ranging from 60-150 kVA, providing uninterrupted power supply for banking operations, ATMs, and IT infrastructure at all branch locations.' },
+    { name: 'Mitsubishi Forklifts', description: '3-ton capacity forklifts for material handling at the central vault and logistics hub, designed for efficient movement of cash, documents, and equipment.' },
+  ], year: '2023-2024', image: '/images/projects/project (2).jpg', description: 'Comprehensive fleet and power solution for Ethiopia\'s largest bank, including 120 branch generators, 45 fleet vehicles, and material handling equipment for the central vault and logistics hub.', result: '97.3% power uptime across all branches. Fleet operating costs reduced by 22% through standardized maintenance.', featured: true },
+  { slug: 'somali-highway', title: 'Somali Region Highway Development', client: 'Ethiopian Roads Authority', location: 'Jijiga to Degehabur, Somali Region', industry: 'Construction', industrySlug: 'construction', equipment: [
+    { name: 'Komatsu GD655 Graders', description: 'Heavy-duty motor graders with precision blade control for achieving exact road gradients and surface finishes, essential for highway base preparation and final grading.' },
+    { name: 'Volvo SD110 Compactors', description: 'Large vibratory soil compactors delivering high compaction force for achieving optimal soil density in road base and embankment construction under extreme conditions.' },
+    { name: 'CAT D6T Dozers', description: 'Medium-sized track-type tractors with exceptional pushing power and blade capacity for land clearing, dozing, and road formation work in remote, high-temperature environments.' },
+  ], year: '2023-2025', image: '/images/projects/project (3).jpg', description: 'Supplied road construction equipment for 340km of highway development in the Somali Region, including graders, compactors, dozers, and support vehicles.', result: 'Phase 1 completed 2 months ahead of schedule. Equipment performed reliably in extreme temperatures exceeding 45°C.', featured: true },
+  { slug: 'irrigation-development', title: 'Irrigation Development Program', client: 'Ministry of Water & Energy', location: 'Oromia & SNNPR Regions', industry: 'Government', industrySlug: 'government', equipment: [
+    { name: 'Tractors', description: 'High-horsepower agricultural tractors equipped with PTO and three-point linkage for pulling ploughs, harrows, and other tillage implements across large farmland areas.' },
+    { name: 'Water Pumps', description: 'High-capacity centrifugal and submersible pumps for drawing water from rivers, reservoirs, and boreholes to supply the irrigation network across 15,000 hectares.' },
+    { name: 'Generator Sets', description: 'Reliable diesel generator sets providing off-grid power for pump stations, control systems, and field operation centres in remote agricultural areas.' },
+    { name: 'Pipe Layers', description: 'Specialized tractor-mounted pipelaying equipment for trenching, laying, and covering irrigation pipes efficiently across long distances.' },
+  ], year: '2024', image: '/images/projects/project (4).jpg', description: 'Provided agricultural and irrigation equipment for a large-scale irrigation development program covering 15,000 hectares across two regions.', result: 'Irrigation capacity increased by 40%. Over 5,000 farming families benefited from improved water access.', featured: false },
 ];
 
 export const featuredProducts: Product[] = [

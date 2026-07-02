@@ -20,7 +20,7 @@ export default function PartsPage() {
           <div>
             <h2 className="section-title mb-6">Parts Guarantee</h2>
             <ul className="space-y-4 mb-8">
-              {['100% OEM-certified genuine parts — no aftermarket imitations', 'Full manufacturer warranty on all parts supplied', 'Comprehensive inventory covering 1,240+ equipment models', '48-hour average lead time for stocked items', 'Express ordering for critical breakdown parts', 'Bulk-order discount programs for fleet operators', 'Parts interchangeability support and cross-referencing', 'Nationwide delivery to any branch or site'].map((item) => (
+              {['100% OEM certified genuine parts no aftermarket imitations', 'Full manufacturer warranty on all parts supplied', 'Comprehensive inventory covering 1,240+ equipment models', '48 hour average lead time for stocked items', 'Express ordering for critical breakdown parts', 'Bulk-order discount programs for fleet operators', 'Parts interchangeability support and cross-referencing', 'Nationwide delivery to any branch or site'].map((item) => (
                 <li key={item} className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-industrial-green flex-shrink-0" /><span className="font-mono text-sm text-charcoal">{item}</span></li>
               ))}
             </ul>
