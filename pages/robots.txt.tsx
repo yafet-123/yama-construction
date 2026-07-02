@@ -1,0 +1,17 @@
+import { GetServerSideProps } from 'next';
+
+export const getServerSideProps: GetServerSideProps = async ({ res }) => {
+  res.setHeader('Content-Type', 'text/plain');
+  res.write(`User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Sitemap: https://www.yamaconstruction.com/sitemap.xml
+`);
+  res.end();
+  return { props: {} };
+};
+
+export default function Robots() {
+  return null;
+}
