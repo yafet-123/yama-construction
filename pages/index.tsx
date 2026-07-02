@@ -42,7 +42,7 @@ export default function HomePage() {
                 <span className="font-mono text-xs uppercase tracking-widest text-gunmetal-gray">Featured Equipment</span>
                 <span className="font-mono text-xs text-muted-brass uppercase">★ Best Seller</span>
               </div>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
                 <div>
                   <span className="spec-value text-sm block">1,240+</span>
                   <span className="spec-label block">Models</span>
@@ -152,7 +152,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-concrete-secondary">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 bg-concrete-secondary">
             {featuredProducts.slice(0, 6).map((product) => (
               <div key={product.id} className="card-product bg-white">
                 <Link href={`/products/${product.categorySlug}/${product.slug}`} className="block">

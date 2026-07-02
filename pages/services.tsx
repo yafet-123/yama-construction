@@ -2,10 +2,10 @@ import Link from 'next/link';
 
 export default function ServicesPage() {
   const services = [
-    { title: 'Preventive Maintenance', slug: '/services/maintenance', description: 'Scheduled maintenance programs tailored to your equipment fleet. Reduce downtime, extend equipment life, and optimize operating costs with our OEM-certified maintenance plans.', stats: ['97% fleet uptime', 'Scheduled oil & filter changes', 'Fluid analysis programs', 'Component wear monitoring'] },
-    { title: 'Field Service', slug: '/services/field-service', description: 'Mobile service units with factory-trained engineers who come to your site. 48-hour average response time across all regions of Ethiopia.', stats: ['48 hr avg. response', '135 field engineers', '6 regional bases', 'Mobile workshop units'] },
-    { title: 'Workshop Repair', slug: '/services', description: 'Full-service workshop at our Kality Parts & Service Center. Engine overhauls, transmission rebuilds, hydraulic system repairs, and component exchange programs.', stats: ['12 service bays', 'OEM diagnostic tools', 'Component exchange', 'Warranty repairs'] },
-    { title: 'Technical Training', slug: '/services', description: 'Operator and technician training programs certified by Caterpillar, Komatsu, Volvo, and JCB. Classroom and hands-on training at our facility or your site.', stats: ['OEM-certified curriculum', 'Operator certification', 'Technician training', 'Safety programs'] },
+    { title: 'Preventive Maintenance', slug: '/services/maintenance', image: '/images/services/Preventive Maintenance.jpg', description: 'Scheduled maintenance programs tailored to your equipment fleet. Reduce downtime, extend equipment life, and optimize operating costs with our OEM-certified maintenance plans.', stats: ['97% fleet uptime', 'Scheduled oil & filter changes', 'Fluid analysis programs', 'Component wear monitoring'] },
+    { title: 'Field Service', slug: '/services/field-service', image: '/images/services/Field Service.jpg', description: 'Mobile service units with factory-trained engineers who come to your site. 48-hour average response time across all regions of Ethiopia.', stats: ['48 hr avg. response', '135 field engineers', '6 regional bases', 'Mobile workshop units'] },
+    { title: 'Workshop Repair', slug: '/services/workshop-repair', image: '/images/services/Workshop Repair.jpg', description: 'Full-service workshop at our Kality Parts & Service Center. Engine overhauls, transmission rebuilds, hydraulic system repairs, and component exchange programs.', stats: ['12 service bays', 'OEM diagnostic tools', 'Component exchange', 'Warranty repairs'] },
+    { title: 'Technical Training', slug: '/services/technical-training', image: '/images/services/Technical Training.jpg', description: 'Operator and technician training programs certified by Caterpillar, Komatsu, Volvo, and JCB. Classroom and hands-on training at our facility or your site.', stats: ['OEM-certified curriculum', 'Operator certification', 'Technician training', 'Safety programs'] },
   ];
 
   return (
@@ -51,8 +51,12 @@ export default function ServicesPage() {
                 </ul>
                 <Link href={service.slug} className="btn-primary text-sm">Learn More</Link>
               </div>
-              <div className={`bg-charcoal-secondary aspect-video flex items-center justify-center ${i % 2 === 1 ? 'lg:order-1' : ''}`}>
-                <span className="font-display font-bold text-2xl text-concrete-secondary/20">{service.title}</span>
+              <div className={`bg-charcoal-secondary aspect-video relative overflow-hidden ${i % 2 === 1 ? 'lg:order-1' : ''}`}>
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full absolute inset-0 object-cover"
+                />
               </div>
             </div>
           ))}

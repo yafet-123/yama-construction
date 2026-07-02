@@ -30,6 +30,17 @@ export default function BrandPage() {
             <div>
               <h1 className="text-white mb-4">{brandData.name}</h1>
               <p className="font-body text-lg text-gunmetal-gray max-w-3xl">{brandData.description}</p>
+              {brandData.website && (
+                <a
+                  href={brandData.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 mt-4 font-mono text-xs text-safety-orange hover:text-white transition-colors"
+                >
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  Visit {brandData.name} Website
+                </a>
+              )}
               <span className="inline-block mt-4 font-mono text-xs text-safety-orange">Authorised Distributor</span>
             </div>
           </div>
@@ -39,7 +50,7 @@ export default function BrandPage() {
       <div className="spec-strip">
         <div className="container-site">
           <span className="font-mono text-xs text-gunmetal-gray">
-            {brandData.name.toUpperCase()} · {products.length} MODELS AVAILABLE · GENUINE PARTS & SERVICE
+            {brandData.name.toUpperCase()} · AUTHORISED DISTRIBUTOR · GENUINE PARTS · FACTORY-TRAINED SERVICE
           </span>
         </div>
       </div>

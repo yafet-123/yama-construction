@@ -17,6 +17,8 @@ export default function Header() {
       { label: 'Overview', href: '/services' },
       { label: 'Maintenance', href: '/services/maintenance' },
       { label: 'Field Service', href: '/services/field-service' },
+      { label: 'Workshop Repair', href: '/services/workshop-repair' },
+      { label: 'Technical Training', href: '/services/technical-training' },
     ]},
     { label: 'Parts', href: '/parts' },
     { label: 'Industries', href: '/industries' },
