@@ -192,25 +192,40 @@ export default function ProductDetailPage() {
               .map((relatedProduct) => (
                 <div key={relatedProduct.id} className="card-product bg-white">
                   <Link href={`/products/${category}/${relatedProduct.slug}`} className="block">
-                    <div className="h-48 bg-charcoal-secondary flex items-center justify-center">
-                      <div className="text-center p-4">
-                        <span className="font-display font-bold text-lg text-concrete-secondary/30">{relatedProduct.brand}</span>
-                        <p className="font-mono text-xs text-gunmetal-gray mt-2">{relatedProduct.name}</p>
+                    <div className="h-48 bg-charcoal-secondary flex items-center justify-center overflow-hidden relative">
+                      <img
+                        src={relatedProduct.image}
+                        alt={relatedProduct.name}
+                        className="w-full h-full object-cover"
+                        onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const fallback = target.nextElementSibling as HTMLElement;
+                          if (fallback) {
+                            fallback.style.display = 'flex';
+                          }
+                        }}
+                      />
+                      <div className="text-center p-4 hidden absolute inset-0 flex items-center justify-center">
+                        <div>
+                          <span className="font-display font-bold text-lg text-concrete-secondary/30 block mb-1">{relatedProduct.brand}</span>
+                          <p className="font-mono text-xs text-gunmetal-gray">{relatedProduct.name}</p>
+                        </div>
                       </div>
                     </div>
                   </Link>
-                  <div className="p-5">
+                  <div className="">
                     <span className="font-mono text-xs uppercase tracking-wider text-muted-brass">{relatedProduct.brand}</span>
                     <Link href={`/products/${category}/${relatedProduct.slug}`}>
                       <h3 className="font-display font-bold text-base text-charcoal mb-3 hover:text-safety-orange transition-colors">{relatedProduct.name}</h3>
                     </Link>
-                    <div className="spec-strip-light -mx-5 px-5 mb-4">
+                    <div className="spec-strip-light px-5">
                       <div className="grid grid-cols-2 gap-3">
                         {relatedProduct.operatingWeight && <div><span className="spec-label">Weight</span><span className="spec-value text-xs block">{relatedProduct.operatingWeight}</span></div>}
                         {relatedProduct.powerOutput && <div><span className="spec-label">Power</span><span className="spec-value text-xs block">{relatedProduct.powerOutput}</span></div>}
                       </div>
                     </div>
-                    <Link href={`/products/${category}/${relatedProduct.slug}`} className="btn-outline text-xs py-2 px-3 w-full text-center block">View Details</Link>
+                    <Link href={`/products/${category}/${relatedProduct.slug}`} className="bg-concrete-secondary btn-outline text-xs py-5 px-3 w-full text-center block">View Details</Link>
                   </div>
                 </div>
               ))}

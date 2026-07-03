@@ -152,7 +152,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 bg-concrete-secondary">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {featuredProducts.slice(0, 6).map((product) => (
               <div key={product.id} className="card-product bg-white">
                 <Link href={`/products/${product.categorySlug}/${product.slug}`} className="block">
@@ -171,7 +171,7 @@ export default function HomePage() {
                     )}
                   </div>
                 </Link>
-                <div className="p-5">
+                <div className="">
                   <div className="flex items-center justify-between mb-2">
                     <span className="font-mono text-xs uppercase tracking-wider text-muted-brass">{product.brand}</span>
                     <span className="font-mono text-[10px] uppercase tracking-wider text-gunmetal-gray">{product.category}</span>
@@ -181,7 +181,7 @@ export default function HomePage() {
                       {product.name}
                     </h3>
                   </Link>
-                  <div className="spec-strip-light -mx-5 px-5 mb-4">
+                  <div className="spec-strip-light px-5">
                     <div className="grid grid-cols-2 gap-3">
                       {product.operatingWeight && (
                         <div>
@@ -197,7 +197,7 @@ export default function HomePage() {
                       )}
                     </div>
                   </div>
-                  <div className="flex gap-2">
+                  <div className="flex bg-concrete-secondary p-5">
                     <Link href={`/products/${product.categorySlug}/${product.slug}`} className="btn-outline text-xs py-2 px-3 flex-1 text-center">
                       View Specs
                     </Link>
@@ -348,14 +348,14 @@ export default function HomePage() {
                     <h3 className="font-display font-bold text-white text-lg mt-2">{project.title}</h3>
                   </div>
                 </div>
-                <div className="p-5">
+                <div className="">
                   <div className="flex items-center gap-2 mb-3">
                     <span className="font-mono text-xs text-gunmetal-gray">Client:</span>
                     <span className="font-mono text-xs text-charcoal font-semibold">{project.client}</span>
                   </div>
-                  <p className="font-body text-sm text-gunmetal-gray mb-4 line-clamp-2">{project.description}</p>
-                  <div className="spec-strip-light -mx-5 px-5">
-                    <span className="font-mono text-xs text-white">{project.result}</span>
+                  <p className="font-body text-md text-gunmetal-gray line-clamp-2">{project.description}</p>
+                  <div className="spec-strip-light px-5">
+                    <span className="font-mono text-md text-white">{project.result}</span>
                   </div>
                 </div>
               </Link>

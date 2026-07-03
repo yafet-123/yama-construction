@@ -60,25 +60,43 @@ export default function BrandPage() {
           {products.length > 0 ? (
             <>
               <h2 className="section-title mb-12">{brandData.name} Equipment</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-concrete-secondary">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 {products.map((product) => (
                   <div key={product.id} className="card-product bg-white">
                     <Link href={`/products/${product.categorySlug}/${product.slug}`} className="block">
-                      <div className="h-48 bg-charcoal-secondary flex items-center justify-center">
-                        <span className="font-display font-bold text-lg text-concrete-secondary/30">{product.brand}</span>
+                      <div className="h-48 bg-charcoal-secondary flex items-center justify-center overflow-hidden relative">
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-full object-cover"
+                          onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = 'none';
+                            const fallback = target.nextElementSibling as HTMLElement;
+                            if (fallback) {
+                              fallback.style.display = 'flex';
+                            }
+                          }}
+                        />
+                        <div className="text-center p-4 hidden absolute inset-0 flex items-center justify-center">
+                          <div>
+                            <span className="font-display font-bold text-lg text-concrete-secondary/30 block mb-1">{product.brand}</span>
+                            <p className="font-mono text-xs text-gunmetal-gray">{product.name}</p>
+                          </div>
+                        </div>
                       </div>
                     </Link>
-                    <div className="p-5">
+                    <div className="">
                       <Link href={`/products/${product.categorySlug}/${product.slug}`}>
                         <h3 className="font-display font-bold text-base text-charcoal mb-3 hover:text-safety-orange transition-colors">{product.name}</h3>
                       </Link>
-                      <div className="spec-strip-light -mx-5 px-5 mb-4">
+                      <div className="spec-strip-light px-5">
                         <div className="grid grid-cols-2 gap-3">
                           {product.operatingWeight && <div><span className="spec-label">Weight</span><span className="spec-value text-xs block">{product.operatingWeight}</span></div>}
                           {product.powerOutput && <div><span className="spec-label">Power</span><span className="spec-value text-xs block">{product.powerOutput}</span></div>}
                         </div>
                       </div>
-                      <div className="flex gap-2">
+                      <div className="flex gap-2 bg-concrete-secondary p-5">
                         <Link href={`/products/${product.categorySlug}/${product.slug}`} className="btn-outline text-xs py-2 px-3 flex-1 text-center">View Specs</Link>
                         <Link href={`/contact?product=${product.slug}`} className="btn-primary text-xs py-2 px-3 flex-1 text-center">Request Quote</Link>
                       </div>

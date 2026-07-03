@@ -68,20 +68,20 @@ export default function CategoryPage() {
                       </div>
                     </div>
                   </Link>
-                  <div className="p-5">
+                  <div className="">
                     <div className="flex items-center justify-between mb-2">
                       <span className="font-mono text-xs uppercase tracking-wider text-muted-brass">{product.brand}</span>
                     </div>
                     <Link href={`/products/${cat.slug}/${product.slug}`}>
                       <h3 className="font-display font-bold text-base text-charcoal mb-3 hover:text-safety-orange transition-colors">{product.name}</h3>
                     </Link>
-                    <div className="spec-strip-light -mx-5 px-5 mb-4">
+                    <div className="spec-strip-light px-5">
                       <div className="grid grid-cols-2 gap-3">
                         {product.operatingWeight && (<div><span className="spec-label">Weight</span><span className="spec-value text-xs block">{product.operatingWeight}</span></div>)}
                         {product.powerOutput && (<div><span className="spec-label">Power</span><span className="spec-value text-xs block">{product.powerOutput}</span></div>)}
                       </div>
                     </div>
-                    <div className="flex gap-2">
+                    <div className="flex bg-concrete-secondary p-5 gap-2">
                       <Link href={`/products/${cat.slug}/${product.slug}`} className="btn-outline text-xs py-2 px-3 flex-1 text-center">View Specs</Link>
                       <Link href={`/contact?product=${product.slug}`} className="btn-primary text-xs py-2 px-3 flex-1 text-center">Request Quote</Link>
                     </div>
