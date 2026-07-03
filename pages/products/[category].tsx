@@ -42,14 +42,29 @@ export default function CategoryPage() {
       <section className="section-padding">
         <div className="container-site">
           {products.length > 0 ? (
-            <div className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-concrete-secondary grid">
+            <div className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 grid">
               {products.map((product) => (
                 <div key={product.id} className="card-product bg-white">
                   <Link href={`/products/${cat.slug}/${product.slug}`} className="block">
-                    <div className="h-48 bg-charcoal-secondary flex items-center justify-center">
-                      <div className="text-center p-4">
-                        <span className="font-display font-bold text-lg text-concrete-secondary/30">{product.brand}</span>
-                        <p className="font-mono text-xs text-gunmetal-gray mt-2">{product.name}</p>
+                    <div className="h-64 bg-charcoal-secondary flex items-center justify-center overflow-hidden relative">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-full object-cover"
+                        onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const fallback = target.nextElementSibling as HTMLElement;
+                          if (fallback) {
+                            fallback.style.display = 'flex';
+                          }
+                        }}
+                      />
+                      <div className="text-center p-4 hidden absolute inset-0 flex items-center justify-center">
+                        <div>
+                          <span className="font-display font-bold text-2xl text-concrete-secondary/30 block mb-2">{product.brand}</span>
+                          <p className="font-mono text-sm text-gunmetal-gray">{product.name}</p>
+                        </div>
                       </div>
                     </div>
                   </Link>

@@ -31,7 +31,7 @@ export default function ProductDetailPage() {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-8">
             <div>
-              <div className="bg-charcoal-secondary aspect-square flex items-center justify-center overflow-hidden">
+              <div className="bg-charcoal-secondary aspect-square flex items-center justify-center overflow-hidden relative">
                 <img
                   src={productData.image}
                   alt={productData.name}
@@ -45,9 +45,11 @@ export default function ProductDetailPage() {
                     }
                   }}
                 />
-                <div className="text-center p-8 hidden">
-                  <span className="font-display font-bold text-4xl text-concrete-secondary/30">{productData.brand}</span>
-                  <p className="font-mono text-sm text-gunmetal-gray mt-4">{productData.name}</p>
+                <div className="text-center p-8 hidden absolute inset-0 flex items-center justify-center">
+                  <div>
+                    <span className="font-display font-bold text-4xl text-concrete-secondary/30 block mb-2">{productData.brand}</span>
+                    <p className="font-mono text-sm text-gunmetal-gray">{productData.name}</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -126,8 +128,8 @@ export default function ProductDetailPage() {
                     key={key} 
                     className={`p-6 ${index % 2 === 0 ? 'border-b md:border-b-0 md:border-r border-concrete-secondary' : 'border-b border-concrete-secondary'}`}
                   >
-                    <span className="spec-label block mb-1">{key}</span>
-                    <span className="spec-value text-base">{value}</span>
+                    <span className="spec-label block mb-1 text-black">{key}</span>
+                    <span className="spec-value text-base text-black">{value}</span>
                   </div>
                 ))}
               </div>
