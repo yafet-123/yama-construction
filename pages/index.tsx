@@ -329,15 +329,21 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-concrete-secondary">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {projects.filter(p => p.featured).slice(0, 3).map((project) => (
               <Link
                 key={project.slug}
                 href={`/projects/${project.slug}`}
                 className="card-product bg-white"
               >
-                <div className="h-56 bg-charcoal-secondary flex items-center justify-center">
-                  <div className="text-center p-6">
+                <div className="h-56 bg-charcoal-secondary relative overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full absolute inset-0 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/40 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
                     <span className="font-mono text-xs uppercase tracking-wider text-safety-orange">{project.industry}</span>
                     <h3 className="font-display font-bold text-white text-lg mt-2">{project.title}</h3>
                   </div>
@@ -349,7 +355,7 @@ export default function HomePage() {
                   </div>
                   <p className="font-body text-sm text-gunmetal-gray mb-4 line-clamp-2">{project.description}</p>
                   <div className="spec-strip-light -mx-5 px-5">
-                    <span className="font-mono text-xs text-industrial-green">{project.result}</span>
+                    <span className="font-mono text-xs text-white">{project.result}</span>
                   </div>
                 </div>
               </Link>
