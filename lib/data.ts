@@ -195,7 +195,7 @@ export const brands: Brand[] = [
   { name: 'Hyundai CE', slug: 'hyundai-ce', logo: '/images/brands/hyundai.svg', description: 'South Korean construction equipment brand offering excavators, wheel loaders, and compact equipment.', website: 'https://www.hyundai-ce.com' },
   { name: 'Hitachi', slug: 'hitachi', logo: '/images/brands/hitachi.svg', description: 'Japanese conglomerate providing hydraulic excavators, mining equipment, and construction machinery.', website: 'https://www.hitachi.com' },
   { name: 'New Holland', slug: 'new-holland', logo: '/images/brands/new-holland.svg', description: 'Global brand of agricultural machinery and construction equipment.', website: 'https://www.newholland.com' },
-  { name: 'ROSTSELMASH', slug: 'rostselmash', logo: '/images/brands/rostselmash.svg', description: 'Manufacturer of agricultural equipment, including combine harvesters.', website: 'https://www.rostselmash.com' },
+  { name: 'Rostselmash', slug: 'rostselmash', logo: '/images/brands/rostselmash.svg', description: 'Manufacturer of agricultural equipment, including combine harvesters.', website: 'https://www.rostselmash.com' },
   { name: 'Generic', slug: 'generic', logo: '/images/brands/generic.svg', description: 'Standard industrial and construction equipment.' },
 ];
 

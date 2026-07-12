@@ -60,8 +60,8 @@ export default function Header() {
             <div className="w-10 h-10 bg-safety-orange flex items-center justify-center">
               <span className="font-display font-extrabold text-white text-sm">YC</span>
             </div>
-            <div className="hidden sm:block">
-              <span className="font-display font-bold text-white text-md uppercase tracking-wider block leading-tight">{SITE_NAME}</span>
+            <div className="block">
+              <span className="font-display font-bold text-white text-xs lg:text-md uppercase tracking-wider block leading-tight">{SITE_NAME}</span>
               <span className="font-mono text-[10px] text-gunmetal-gray uppercase tracking-widest">Heavy Equipment & Machinery</span>
             </div>
           </Link>

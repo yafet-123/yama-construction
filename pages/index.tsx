@@ -68,7 +68,7 @@ export default function HomePage() {
       {/* 2. Spec Strip Divider */}
       <div className="spec-strip">
         <div className="container-site">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 text-center">
             <div>
               <span className="font-mono text-white text-lg font-semibold">1,240+</span>
               <span className="block font-mono text-xs text-gunmetal-gray uppercase tracking-wider mt-1">Models in Catalog</span>
@@ -104,12 +104,12 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-concrete-secondary">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 bg-concrete-secondary">
             {categories.slice(0, 6).map((cat) => (
               <Link
                 key={cat.slug}
                 href={`/products/${cat.slug}`}
-                className="card-category bg-concrete p-6 md:p-8 group border border-concrete-secondary hover:border-safety-orange transition-all duration-300"
+                className="card-category bg-concrete p-0 md:p-8 group border border-concrete-secondary hover:border-safety-orange transition-all duration-300"
               >
                 <div className="h-64 bg-charcoal-secondary mb-6 flex items-center justify-center overflow-hidden">
                   {cat.image ? (
@@ -217,7 +217,7 @@ export default function HomePage() {
       <section className="py-12 border-b border-concrete-secondary">
         <div className="container-site">
           <div className="text-center mb-10">
-            <span className="font-mono text-xs uppercase tracking-widest text-gunmetal-gray">Authorised Distributor & Service Partner</span>
+            <span className="font-mono text-lg uppercase tracking-widest text-black">Authorised Distributor & Service Partner</span>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
             {brands.map((brand) => (
@@ -226,8 +226,8 @@ export default function HomePage() {
                 href={`/brands/${brand.slug}`}
                 className="group"
               >
-                <div className="w-28 h-12 bg-concrete-secondary flex items-center justify-center grayscale-to-color px-4">
-                  <span className="font-display font-bold text-sm text-gunmetal-gray group-hover:text-charcoal transition-colors">{brand.name}</span>
+                <div className="w-32 h-12 bg-white rounded-xl flex items-center justify-center grayscale-to-color px-4">
+                  <span className="font-display font-bold text-sm text-black group-hover:text-charcoal transition-colors">{brand.name}</span>
                 </div>
               </Link>
             ))}
@@ -350,12 +350,12 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="">
-                  <div className="flex items-center gap-2 mb-3">
+                  <div className="flex items-center gap-2 mb-3 px-5 pt-5">
                     <span className="font-mono text-xs text-gunmetal-gray">Client:</span>
                     <span className="font-mono text-xs text-charcoal font-semibold">{project.client}</span>
                   </div>
-                  <p className="font-body text-md text-gunmetal-gray line-clamp-2">{project.description}</p>
-                  <div className="spec-strip-light px-5">
+                  <p className="font-body text-md text-gunmetal-gray line-clamp-2 px-5">{project.description}</p>
+                  <div className="spec-strip-light px-5 mt-5">
                     <span className="font-mono text-md text-white">{project.result}</span>
                   </div>
                 </div>
@@ -413,7 +413,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {industries.map((ind) => (
               <Link
                 key={ind.slug}
