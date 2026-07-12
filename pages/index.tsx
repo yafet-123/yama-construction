@@ -19,7 +19,8 @@ export default function HomePage() {
             </div>
             <h1 className="text-white mb-6">
               Powering<br />
-              <span className="text-safety-orange">Ethiopia's Infrastructure</span><br />
+              <span className="text-safety-orange">Ethiopia's Infrastructure</span>
+              <br />
               for Over {SITE_YEARS} Years
             </h1>
             <p className="font-body text-lg text-gunmetal-gray max-w-xl mb-10 leading-relaxed">

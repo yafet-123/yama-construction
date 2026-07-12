@@ -90,7 +90,7 @@ export interface Branch {
   coordinates: { lat: number; lng: number };
 }
 
-export const SITE_NAME = 'YAMA Construction';
+export const SITE_NAME = 'YAMA Construction Machinery Import & Rental';
 export const SITE_DESCRIPTION = 'Ethiopia\'s leading supplier of heavy industrial machinery — excavators, loaders, tractors, generators, compressors, and commercial vehicles for construction, mining, agriculture, and government projects.';
 export const SITE_PHONE = '+251-934-78-1038';
 export const SITE_EMAIL = 'info@yamaconstruction.com';

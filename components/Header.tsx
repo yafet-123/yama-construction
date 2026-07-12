@@ -54,14 +54,14 @@ export default function Header() {
 
       {/* Main nav */}
       <div className="container-site">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <div className="w-10 h-10 bg-safety-orange flex items-center justify-center">
               <span className="font-display font-extrabold text-white text-sm">YC</span>
             </div>
             <div className="hidden sm:block">
-              <span className="font-display font-bold text-white text-lg uppercase tracking-wider block leading-tight">{SITE_NAME}</span>
+              <span className="font-display font-bold text-white text-md uppercase tracking-wider block leading-tight">{SITE_NAME}</span>
               <span className="font-mono text-[10px] text-gunmetal-gray uppercase tracking-widest">Heavy Equipment & Machinery</span>
             </div>
           </Link>
