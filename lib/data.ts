@@ -91,7 +91,7 @@ export interface Branch {
 }
 
 export const SITE_NAME = 'YAMA Construction Machinery Import & Rental';
-export const SITE_DESCRIPTION = 'Ethiopia\'s leading supplier of heavy industrial machinery — excavators, loaders, tractors, generators, compressors, and commercial vehicles for construction, mining, agriculture, and government projects.';
+export const SITE_DESCRIPTION = 'Ethiopia\'s leading supplier of heavy industrial machinery excavators, loaders, tractors, generators, compressors, and commercial vehicles for construction, mining, agriculture, and government projects.';
 export const SITE_PHONE = '+251-934-78-1038';
 export const SITE_EMAIL = 'info@yamaconstruction.com';
 export const SITE_WHATSAPP = '+251934781038';
@@ -349,7 +349,7 @@ export const blogPosts: BlogPost[] = [
     author: 'YAMA Technical Team',
     category: 'Equipment Guide',
     image: '/images/blog/blog (1).jpg',
-    content: `<p>Choosing the right excavator for your project is one of the most critical equipment decisions you will make. With Ethiopia's diverse terrain — from the highlands of Tigray to the lowlands of the Somali Region — the wrong machine can lead to costly delays, excessive fuel consumption, and premature wear.</p>
+    content: `<p>Choosing the right excavator for your project is one of the most critical equipment decisions you will make. With Ethiopia's diverse terrain from the highlands of Tigray to the lowlands of the Somali Region the wrong machine can lead to costly delays, excessive fuel consumption, and premature wear.</p>
 <p>At YAMA Construction, we have supplied over 1,200 excavators to projects across Ethiopia, ranging from small urban developments to large-scale mining operations. This guide draws on that experience to help you make an informed decision.</p>
 <h2>1. Determine Your Operating Weight Class</h2>
 <p>Excavators are categorized by operating weight, which directly correlates to digging depth, lifting capacity, and power. For most Ethiopian construction projects, the following classes apply:</p>
@@ -374,7 +374,7 @@ export const blogPosts: BlogPost[] = [
     author: 'YAMA Technical Team',
     category: 'Technical Guide',
     image: '/images/blog/blog (2).jpg',
-    content: `<p>Reliable power is essential for business operations in Ethiopia, where grid instability can disrupt productivity and damage sensitive equipment. Choosing the right generator size is critical — an undersized generator will struggle under load, while an oversized unit wastes fuel and operates inefficiently.</p>
+    content: `<p>Reliable power is essential for business operations in Ethiopia, where grid instability can disrupt productivity and damage sensitive equipment. Choosing the right generator size is critical an undersized generator will struggle under load, while an oversized unit wastes fuel and operates inefficiently.</p>
 <p>This guide from YAMA Construction's power solutions team will help you calculate your exact power requirements and select the optimal generator for your needs.</p>
 <h2>Understanding Power Ratings</h2>
 <p>Generators have two power ratings that are important to understand:</p>
@@ -407,11 +407,11 @@ export const blogPosts: BlogPost[] = [
 <h2>Weekly Maintenance</h2>
 <ul><li>Grease all pivot points and fittings according to the manufacturer's specifications.</li><li>Check and clean air filter pre-cleaners.</li><li>Inspect belts and hoses for wear, cracking, or looseness.</li><li>Check battery terminals and electrolyte levels.</li><li>Verify tire/wheel lug nut torque.</li><li>Clean the radiator and oil cooler fins.</li></ul>
 <h2>Monthly Maintenance</h2>
-<ul><li>Change engine oil and replace oil filter (or follow manufacturer's hour-based schedule).</li><li>Replace fuel filters.</li><li>Inspect and adjust track tension (for tracked equipment).</li><li>Check all fluid levels — transmission, final drives, hydraulic system.</li><li>Inspect exhaust system for leaks or damage.</li><li>Test all safety systems including backup alarms and cameras.</li></ul>
+<ul><li>Change engine oil and replace oil filter (or follow manufacturer's hour-based schedule).</li><li>Replace fuel filters.</li><li>Inspect and adjust track tension (for tracked equipment).</li><li>Check all fluid levels transmission, final drives, hydraulic system.</li><li>Inspect exhaust system for leaks or damage.</li><li>Test all safety systems including backup alarms and cameras.</li></ul>
 <h2>Quarterly Maintenance</h2>
-<ul><li>Replace air filters.</li><li>Change hydraulic oil filter.</li><li>Inspect and service the cooling system — check coolant concentration and condition.</li><li>Check and adjust valve clearances (if applicable).</li><li>Inspect structural components for cracks or damage.</li><li>Test and calibrate instrument panel and sensors.</li></ul>
+<ul><li>Replace air filters.</li><li>Change hydraulic oil filter.</li><li>Inspect and service the cooling system check coolant concentration and condition.</li><li>Check and adjust valve clearances (if applicable).</li><li>Inspect structural components for cracks or damage.</li><li>Test and calibrate instrument panel and sensors.</li></ul>
 <h2>Annual / 1,000-Hour Maintenance</h2>
-<ul><li>Complete fluid change — engine oil, hydraulic oil, transmission oil, coolant.</li><li>Replace all filters — oil, fuel, hydraulic, air, coolant.</li><li>Injector service and fuel system calibration.</li><li>Turbocharger inspection and service.</li><li>Complete undercarriage inspection and measurement.</li><li>Electrical system inspection — wiring, connectors, alternator, starter.</li><li>Paint touch-up and corrosion protection.</li></ul>
+<ul><li>Complete fluid change engine oil, hydraulic oil, transmission oil, coolant.</li><li>Replace all filters oil, fuel, hydraulic, air, coolant.</li><li>Injector service and fuel system calibration.</li><li>Turbocharger inspection and service.</li><li>Complete undercarriage inspection and measurement.</li><li>Electrical system inspection wiring, connectors, alternator, starter.</li><li>Paint touch-up and corrosion protection.</li></ul>
 <h2>Record Keeping</h2>
 <p>Maintain detailed records of all maintenance activities, including dates, hours, parts replaced, and observations. This history is invaluable for warranty claims, resale value, and identifying recurring issues. YAMA Construction offers a digital maintenance tracking system for fleet customers.</p>
 <h2>Why Choose YAMA Construction for Service?</h2>
@@ -428,7 +428,7 @@ export const blogPosts: BlogPost[] = [
     image: '/images/blog/blog (4).jpg',
     content: `<p>Acquiring heavy equipment requires significant capital investment. For many Ethiopian construction firms, government agencies, and commercial enterprises, financing is the key to accessing the equipment needed to win and execute projects. YAMA Construction offers a range of flexible financing solutions tailored to the Ethiopian market.</p>
 <h2>1. Direct Purchase</h2>
-<p>The simplest option — pay the full purchase price upfront. This is ideal for organizations with available capital and provides the lowest total cost. Benefits include immediate ownership, no interest costs, and full control over the asset. YAMA Construction offers competitive pricing and volume discounts for fleet purchases.</p>
+<p>The simplest option pay the full purchase price upfront. This is ideal for organizations with available capital and provides the lowest total cost. Benefits include immediate ownership, no interest costs, and full control over the asset. YAMA Construction offers competitive pricing and volume discounts for fleet purchases.</p>
 <h2>2. Equipment Financing / Loans</h2>
 <p>Partnering with Ethiopian banks and microfinance institutions, YAMA Construction can facilitate equipment loans with competitive terms. Typical structures include:</p>
 <ul><li><strong>Down payment:</strong> 20–30% of equipment value.</li><li><strong>Repayment period:</strong> 12–60 months.</li><li><strong>Interest rates:</strong> Competitive rates based on the borrower's credit profile and the equipment type.</li><li><strong>Collateral:</strong> The equipment itself often serves as collateral.</li></ul>
@@ -476,8 +476,8 @@ export const blogPosts: BlogPost[] = [
 ];
  
 export const branches: Branch[] = [
-  { name: 'Addis Ababa — Headquarters', address: 'Bole Road, Near Bole International Airport, Addis Ababa, Ethiopia', phone: '+251-11-550-1234', email: 'info@yamaconstruction.com', hours: 'Mon–Fri: 8:00–17:30 | Sat: 8:00–13:00', coordinates: { lat: 8.9806, lng: 38.7578 } },
-  { name: 'Addis Ababa — Parts & Service Center', address: 'Kality Industrial Zone, Addis Ababa, Ethiopia', phone: '+251-11-550-5678', email: 'parts@yamaconstruction.com', hours: 'Mon–Fri: 7:30–18:00 | Sat: 8:00–15:00', coordinates: { lat: 8.9000, lng: 38.7500 } },
+  { name: 'Addis Ababa Headquarters', address: 'Bole Road, Near Bole International Airport, Addis Ababa, Ethiopia', phone: '+251-11-550-1234', email: 'info@yamaconstruction.com', hours: 'Mon–Fri: 8:00–17:30 | Sat: 8:00–13:00', coordinates: { lat: 8.9806, lng: 38.7578 } },
+  { name: 'Addis Ababa Parts & Service Center', address: 'Kality Industrial Zone, Addis Ababa, Ethiopia', phone: '+251-11-550-5678', email: 'parts@yamaconstruction.com', hours: 'Mon–Fri: 7:30–18:00 | Sat: 8:00–15:00', coordinates: { lat: 8.9000, lng: 38.7500 } },
   { name: 'Dire Dawa Branch', address: 'Dire Dawa Industrial Park, Dire Dawa, Ethiopia', phone: '+251-25-111-2345', email: 'diredawa@yamaconstruction.com', hours: 'Mon–Fri: 8:00–17:30 | Sat: 8:00–13:00', coordinates: { lat: 9.6000, lng: 41.8500 } },
   { name: 'Bahir Dar Branch', address: 'Bahir Dar City Center, Near Stadium, Bahir Dar, Ethiopia', phone: '+251-58-220-3456', email: 'bahirdar@yamaconstruction.com', hours: 'Mon–Fri: 8:00–17:30 | Sat: 8:00–13:00', coordinates: { lat: 11.6000, lng: 37.3833 } },
   { name: 'Hawassa Branch', address: 'Hawassa Industrial Park, Hawassa, Ethiopia', phone: '+251-46-220-4567', email: 'hawassa@yamaconstruction.com', hours: 'Mon–Fri: 8:00–17:30 | Sat: 8:00–13:00', coordinates: { lat: 7.0500, lng: 38.4667 } },
