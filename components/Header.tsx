@@ -8,6 +8,7 @@ import { SITE_NAME, SITE_PHONE, categories, brands } from '@/lib/data';
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
   const pathname = usePathname();
 
   const navItems = [
@@ -120,30 +121,52 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-charcoal-secondary border-t border-charcoal-secondary/50">
+        <div className="lg:hidden bg-charcoal-secondary border-t border-charcoal-secondary/50 max-h-[calc(100vh-80px)] overflow-y-auto">
           <div className="container-site py-4 space-y-1">
             {navItems.map((item) => (
               <div key={item.label}>
-                <Link
-                  href={item.href}
-                  className={`block px-3 py-2 font-mono text-sm transition-colors ${isActive(item) ? 'text-safety-orange' : 'text-gunmetal-gray hover:text-white'}`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-                {item.dropdown && (
-                  <div className="pl-6 space-y-1">
-                    {item.dropdown.map((d) => (
-                      <Link
-                        key={d.label}
-                        href={d.href}
-                        className={`block px-3 py-1.5 font-mono text-xs transition-colors ${isActive(item) && pathname === d.href ? 'text-safety-orange' : 'text-gunmetal-gray hover:text-white'}`}
-                        onClick={() => setMobileMenuOpen(false)}
+                {item.dropdown ? (
+                  <>
+                    <button
+                      onClick={() => setOpenMobileDropdown(openMobileDropdown === item.label ? null : item.label)}
+                      className={`w-full text-left px-3 py-2 font-mono text-sm transition-colors flex items-center justify-between ${isActive(item) ? 'text-safety-orange' : 'text-gunmetal-gray hover:text-white'}`}
+                    >
+                      <span>{item.label}</span>
+                      <svg
+                        className={`w-4 h-4 transition-transform ${openMobileDropdown === item.label ? 'rotate-180' : ''}`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
                       >
-                        {d.label}
-                      </Link>
-                    ))}
-                  </div>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    {openMobileDropdown === item.label && (
+                      <div className="pl-6 space-y-1">
+                        {item.dropdown.map((d) => (
+                          <Link
+                            key={d.label}
+                            href={d.href}
+                            className={`block px-3 py-1.5 font-mono text-xs transition-colors ${isActive(item) && pathname === d.href ? 'text-safety-orange' : 'text-gunmetal-gray hover:text-white'}`}
+                            onClick={() => {
+                              setMobileMenuOpen(false);
+                              setOpenMobileDropdown(null);
+                            }}
+                          >
+                            {d.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className={`block px-3 py-2 font-mono text-sm transition-colors ${isActive(item) ? 'text-safety-orange' : 'text-gunmetal-gray hover:text-white'}`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
                 )}
               </div>
             ))}

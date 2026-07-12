@@ -28,7 +28,7 @@ export default function BrandPage() {
               <span className="font-display font-bold text-white text-2xl">{brandData.name.charAt(0)}</span>
             </div>
             <div>
-              <h1 className="text-white mb-4">{brandData.name}</h1>
+              <p className="text-white mb-4 text-4xl lg:text-7xl font-bold">{brandData.name}</p>
               <p className="font-body text-lg text-gunmetal-gray max-w-3xl">{brandData.description}</p>
               {brandData.website && (
                 <a

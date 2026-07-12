@@ -219,12 +219,12 @@ export default function HomePage() {
           <div className="text-center mb-10">
             <span className="font-mono text-lg uppercase tracking-widest text-black">Authorised Distributor & Service Partner</span>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
+          <div className="flex overflow-x-auto gap-8 pb-4 scrollbar-hide items-center">
             {brands.map((brand) => (
               <Link
                 key={brand.slug}
                 href={`/brands/${brand.slug}`}
-                className="group"
+                className="group flex-shrink-0"
               >
                 <div className="w-32 h-12 bg-white rounded-xl flex items-center justify-center grayscale-to-color px-4">
                   <span className="font-display font-bold text-sm text-black group-hover:text-charcoal transition-colors">{brand.name}</span>
